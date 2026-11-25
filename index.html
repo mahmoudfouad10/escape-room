@@ -24,6 +24,12 @@
   <link rel="stylesheet" href="./game-overrides.css">
 </head>
 <body><div id="root"></div>
+<script>
+(function(){var shown=false;function top(){try{window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;var r=document.getElementById('root');var n=r;while(n){if(n.scrollTop)n.scrollTop=0;n=n.firstElementChild}}catch(e){}}
+function check(){var has=(document.body.textContent||'').indexOf('العب تاني')>-1;if(has&&!shown){shown=true;top();setTimeout(top,60);setTimeout(top,250)}else if(!has){shown=false}}
+new MutationObserver(check).observe(document.documentElement,{childList:true,subtree:true,characterData:true});})();
+</script>
+
 <noscript>
   <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#060d1f;color:#fff;font-family:sans-serif;text-align:center;padding:24px;">
     <div>
